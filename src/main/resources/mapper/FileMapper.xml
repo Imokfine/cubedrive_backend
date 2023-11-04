@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imokfine.cubedrive.mapper.FileMapper">
+
+    <resultMap id="BaseResultMap" type="com.imokfine.cubedrive.model.File">
+            <id property="fileId" column="file_id" jdbcType="INTEGER"/>
+            <id property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="fileMd5" column="file_md5" jdbcType="VARCHAR"/>
+            <result property="filePid" column="file_pid" jdbcType="INTEGER"/>
+            <result property="fileName" column="file_name" jdbcType="VARCHAR"/>
+            <result property="fileSize" column="file_size" jdbcType="BIGINT"/>
+            <result property="fileUrl" column="file_url" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="folderType" column="folder_type" jdbcType="TINYINT"/>
+            <result property="fileCategory" column="file_category" jdbcType="TINYINT"/>
+            <result property="fileType" column="file_type" jdbcType="TINYINT"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="recoveryTime" column="recovery_time" jdbcType="TIMESTAMP"/>
+            <result property="delFlag" column="del_flag" jdbcType="TINYINT"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        file_id,user_id,file_md5,
+        file_pid,file_name,file_size,
+        file_url,create_time,folder_type,
+        file_category,file_type,status,
+        recovery_time,del_flag,is_deleted
+    </sql>
+</mapper>

@@ -1,0 +1,36 @@
+#server
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  address: localhost
+
+# spring
+spring:
+  datasource: # database connection pool (druid)
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql:///cubedrive
+      username: root
+      password: f6w4f1FXN!
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# mybatis-plus
+mybatis-plus:
+  type-aliases-package: com.imokfine.cubedrive.model
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted #global logic delete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto #key id increase automatically
+
+# jwt
+jwt:
+  token:
+    tokenExpiration: 120 # minutes
+    tokenSignKey: cubedrivekey777 #user-defined sign key
